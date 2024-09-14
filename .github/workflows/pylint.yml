@@ -21,4 +21,4 @@ jobs:
     - name: Analysing the code with pylint
       run: |
         pylint $(git ls-files 'my*.py')
-          python lint.py --path ./src --threshold 4
+          python lint.py --path . --threshold 4
