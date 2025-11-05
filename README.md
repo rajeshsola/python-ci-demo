@@ -1,5 +1,9 @@
 Python CI Demo
 
+# Pytest Report
+
+[![Python App - Testing](https://github.com/rajeshsola/python-ci-demo/actions/workflows/pytest.yml/badge.svg)](https://github.com/rajeshsola/python-ci-demo/actions/workflows/pytest.yml)
+
 # Pylint report
 
 ## Pylint status
