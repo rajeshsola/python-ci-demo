@@ -1,4 +1,4 @@
-from myfun import is_leap
+from myleap import is_leap
 import pytest
 
 def test_leap():
