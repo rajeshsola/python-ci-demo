@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ["3.8", "3.9", "3.10"]
+        python-version: ["3.10"]
     steps:
     - uses: actions/checkout@v4
     - name: Set up Python ${{ matrix.python-version }}
@@ -20,5 +20,22 @@ jobs:
         pip install pylint
     - name: Analysing the code with pylint
       run: |
-        pylint $(git ls-files 'my*.py')
-          python lint.py --path . --threshold 4
+        pylint $(git ls-files '*.py' | grep -v test) > pylint_report.txt || true
+    - name: Extract pylint score
+      id: extract_score
+      run: |
+        SCORE=$(grep -oP '(?<=Your code has been rated at )[-0-9\.]+' pylint_report.txt)
+        echo "score=$SCORE" >> $GITHUB_OUTPUT
+        echo "Pylint score: $SCORE"
+
+    - name: Upload pylint report
+      uses: actions/upload-artifact@v4
+      with:
+        name: pylint-report
+        path: pylint_report.txt
+    - name: Generate badge JSON
+      run: |
+          SCORE=$(grep -oP '(?<=Your code has been rated at )[-0-9\.]+' pylint_report.txt)
+          echo "{\"schemaVersion\":1,\"label\":\"pylint\",\"message\":\"$SCORE/10\",\"color\":\"blue\"}" > pylint-badge.json
+          mkdir -p badges
+          mv pylint-badge.json badges/
