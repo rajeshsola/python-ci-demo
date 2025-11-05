@@ -10,7 +10,7 @@ Python CI Demo
 [![Pylint](https://github.com/rajeshsola/python-ci-demo/actions/workflows/pylint.yml/badge.svg)](https://github.com/TechEvents-FOSS/python-trial/actions/workflows/pylint.yml)
 
 ## Pylint score
-![Pylint Score](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/rajeshsola/python-ci-demo/badges/pylint-badge.json)
+![Pylint Score](https://img.shields.io/endpoint?url=https://github.com/rajeshsola/python-ci-demo/raw/refs/heads/main/badges/pylint-badge.json)
 
 ## Color Badge Color
 [![Pylint Score](https://img.shields.io/badge/pylint-0.0%20%2F%205.0-red)](https://github.com/rajeshsola/python-ci-demo/actions/workflows/pylint.yml)
