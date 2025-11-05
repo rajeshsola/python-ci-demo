@@ -2,7 +2,7 @@ Python CI Demo
 
 # Pytest Report
 
-[![Python App - Testing](https://github.com/rajeshsola/python-ci-demo/actions/workflows/pytest.yml/badge.svg)](https://github.com/rajeshsola/python-ci-demo/actions/workflows/pytest.yml)
+[![Python App - Testing](https://github.com/rajeshsola/python-ci-demo/actions/workflows/python-app.yml/badge.svg)](https://github.com/rajeshsola/python-ci-demo/actions/workflows/python-app.yml)
 
 # Pylint report
 
